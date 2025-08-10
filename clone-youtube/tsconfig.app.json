@@ -1,33 +1,25 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "baseUrl": ".",
-    "paths": {
-      "@app/*": ["app/*"],
-      "@entities/*": ["entities/*"],
-      "@features/*": ["features/*"],
-      "@pages/*": ["pages/*"],
-      "@shared/*": ["shared/*"],
-      "@widgets/*": ["widgets/*"]
-    },
+	"extends": "@vue/tsconfig/tsconfig.dom.json",
+	"compilerOptions": {
+		"tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
 
-    /* Linting */
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
-  },
-  "include": [
-    "app",
-    "pages",
-    "entities",
-    "features",
-    "shared",
-    "widgets",
-    "processes",
-    "types"
-  ]
+		/* Linting */
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"erasableSyntaxOnly": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedSideEffectImports": true
+	},
+	"include": [
+		"app",
+		"pages",
+		"entities",
+		"features",
+		"shared",
+		"widgets",
+		"processes",
+		"types",
+		"app/App.vue"
+	]
 }
