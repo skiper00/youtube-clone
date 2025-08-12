@@ -1,5 +1,5 @@
 <template>
-	<div class="py-1 px-[17px]">
+	<header class="py-1 px-[17px]">
 		<div class="flex justify-between items-center">
 			<div class="flex items-center gap-2">
 				<div
@@ -41,7 +41,7 @@
 				/>
 			</div>
 		</div>
-	</div>
+	</header>
 </template>
 
 <script lang="ts" setup>

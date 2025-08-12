@@ -1,8 +1,9 @@
 <template>
-	<div class="">
-		<h1 class="text-2xl font-bold text-green-600">Добро пожаловать!</h1>
-		<p>Это моя стартовая страница.</p>
+	<div class="p-2">
+		<video-card />
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import VideoCard from '@features/videoFeed/ui/VideoCard.vue';
+</script>
