@@ -12,6 +12,7 @@
 	"dependencies": {
 		"@iconify/vue": "^5.0.0",
 		"@tailwindcss/vite": "^4.1.11",
+		"dayjs": "^1.11.13",
 		"dotenv": "^17.2.1",
 		"pinia": "^3.0.3",
 		"tailwindcss": "^4.1.11",

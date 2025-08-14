@@ -1,35 +1,33 @@
 <template>
-	<div class="max-w-[433px]">
+	<div class="max-w-[433px] cursor-pointer">
 		<div class="relative">
 			<img
 				class="rounded-[12px] transition-all hover:rounded-none"
-				src="https://avatars.mds.yandex.net/i?id=5de231ea3e0a4bd440a0628dfad27677899420a7-4507619-images-thumbs&n=13"
+				:src="preview"
 				alt=""
 			/>
 			<div
 				class="absolute right-1 bottom-1.5 px-1.5 rounded-[5px] bg-[#0f0f0f]/60"
 			>
-				<span class="text-white text-sm">38:14</span>
+				<span class="text-white text-sm">{{ duration }}</span>
 			</div>
 		</div>
 		<div class="flex items-start mt-[13px] gap-3">
 			<img
 				class="max-w-[36px] rounded-full cursor-pointer"
-				src="https://avatars.mds.yandex.net/i?id=3a2bcf8e4848c36654663b9ba25a74e3e97089b0-4815706-images-thumbs&n=13"
+				:src="avatarMap"
 				alt=""
 			/>
 			<div class="max-w-[400px]">
 				<p class="clamp-2 text-white font-medium text-lg leading-[22px]">
-					текст текст текст текст текст текст текст текст текст текст текст
-					текст текст текст текст текст текст текст текст текст текст текст
-					текст текст текст
+					{{nameVideo}}
 				</p>
 				<div>
 					<p class="text-[#aaa] hover:text-[#f1f1f1] cursor-pointer">
-						Artem Kozorezov
+						{{ nameChannel }}
 					</p>
 					<div class="text-[#aaa]">
-						<span>14 тыс. просмотров</span> • <span>4 месяца назад</span>
+						<span>{{ viewCount }} просмотров</span> • <span>{{ publishedAt }}</span>
 					</div>
 				</div>
 			</div>
@@ -37,7 +35,21 @@
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { defineProps } from 'vue';
+
+
+defineProps<{ 
+preview:string,
+nameVideo:string,
+nameChannel:string,
+duration:string,
+publishedAt:string,
+avatarMap:string,
+viewCount:string
+}>()
+
+</script>
 
 <style scoped>
 .clamp-2 {
