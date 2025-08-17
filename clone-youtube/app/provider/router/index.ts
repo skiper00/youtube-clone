@@ -4,12 +4,14 @@ import HomeView from '@pages/HomeView.vue';
 import History from '@pages/History.vue';
 import Playlists from '@pages/Playlists.vue';
 import Liked from '@pages/Liked.vue';
+import PageVideo from '@pages/PageVideo.vue';
 
 const routes = [
 	{ path: '/', component: HomeView },
 	{ path: '/history', component: History },
 	{ path: '/playlists', component: Playlists },
 	{ path: '/liked', component: Liked },
+	{ path: '/watch/:id', component: PageVideo, props: true },
 ];
 
 export const router = createRouter({

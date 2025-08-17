@@ -1,32 +1,35 @@
 <template>
 	<div class="p-2 gap-5 grid grid-cols-3">
-		<video-card 
-		v-for="video in videos?.items"
-		:key="video.id"
-		:preview="video.snippet.thumbnails.high.url"
-		:name-video="video.snippet.title"
-		:name-channel="video.snippet.channelTitle"
-		:published-at="video.snippet.publishedAt"
-		:duration="video.contentDetails.duration"
-		:view-count="+video.statistics.viewCount"
-		:avatarMap="video.snippet.channelAvatar"
+		<video-card
+			v-for="video in videos?.items"
+			@click="getToVideo(video.id)"
+			:key="video.id"
+			:preview="video.snippet.thumbnails.high.url"
+			:name-video="video.snippet.title"
+			:name-channel="video.snippet.channelTitle"
+			:published-at="video.snippet.publishedAt"
+			:duration="video.contentDetails.duration"
+			:view-count="+video.statistics.viewCount"
+			:avatar-map="video.snippet.channelAvatar"
 		/>
 	</div>
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import getVideos from '@entities/video/api/video';
+import { useRouter } from 'vue-router';
+import {useVideoFeed} from '@/features/videoFeed/model/useVideoFeed';
 import VideoCard from '@features/videoFeed/ui/VideoCard.vue';
 
-const { fetchVideos, videos } = getVideos();
+const router = useRouter();
 
-onMounted(async() => {
-	await fetchVideos()
-	console.log('Все',videos.value)
-	if(videos.value) {
-		console.log('Инфа',videos.value.items);
-	}
-})
+const { fetchVideos, videos } = useVideoFeed();
 
+const getToVideo = (videoId: string) => {
+	router.push(`/watch/${videoId}`);
+};
+
+onMounted(async () => {
+	await fetchVideos();
+});
 </script>
