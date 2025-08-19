@@ -4,7 +4,7 @@ interface IThumbnail {
 	height: number;
 }
 
-export interface IVideoSnippet {
+interface IVideoSnippet {
 	publishedAt: string;
 	channelId: string;
 	title: string;
@@ -14,7 +14,6 @@ export interface IVideoSnippet {
 		medium: IThumbnail;
 		high: IThumbnail;
 		standard?: IThumbnail;
-		maxres?: IThumbnail;
 	};
 	channelTitle: string;
 	tags?: string[];
@@ -24,32 +23,36 @@ export interface IVideoSnippet {
 		title: string;
 		description: string;
 	};
-	channelAvatar:string | null
+	channelAvatar: string | null;
 }
 
-export interface IVideoContentDetails {
+interface IVideoContentDetails {
 	duration: string;
 	dimension: string;
 	definition: string;
 	caption: string;
-	projection: string;
 	licensedContent: boolean;
+	regionRestriction: {
+		blocked: string[];
+	};
+	contentRating: any;
+	projection: string;
 }
 
-export interface IVideoStatistics {
+interface IVideoStatistics {
 	viewCount: string;
 	likeCount: string;
 	favoriteCount: string;
 	commentCount: string;
 }
-export interface IVideo {
+interface IVideo {
 	id: string;
 	snippet: IVideoSnippet;
 	contentDetails: IVideoContentDetails;
 	statistics: IVideoStatistics;
 }
 
-export interface IYouTubeResponse {
+interface IYouTubeResponse {
 	etag: string;
 	items: IVideo[];
 	nextPageToken?: string;
@@ -59,3 +62,10 @@ export interface IYouTubeResponse {
 		resultsPerPage: number;
 	};
 }
+export type {
+	IVideoSnippet,
+	IVideoContentDetails,
+	IVideoStatistics,
+	IVideo,
+	IYouTubeResponse,
+};
