@@ -20,14 +20,15 @@
 			/>
 			<div class="max-w-[400px]">
 				<p class="clamp-2 text-white font-medium text-lg leading-[22px]">
-					{{nameVideo}}
+					{{ nameVideo }}
 				</p>
 				<div>
 					<p class="text-[#aaa] hover:text-[#f1f1f1] cursor-pointer">
 						{{ nameChannel }}
 					</p>
 					<div class="text-[#aaa]">
-						<span>{{ viewCount }} просмотров</span> • <span>{{ publishedAt }}</span>
+						<span>{{ viewCount }} просмотров</span> •
+						<span>{{ publishedAt }}</span>
 					</div>
 				</div>
 			</div>
@@ -38,17 +39,15 @@
 <script lang="ts" setup>
 import { defineProps } from 'vue';
 
-
-defineProps<{ 
-preview:string,
-nameVideo:string,
-nameChannel:string,
-duration:string,
-publishedAt:string,
-avatarMap:string,
-viewCount:string
-}>()
-
+defineProps<{
+	preview: string;
+	nameVideo: string;
+	nameChannel: string;
+	duration: string;
+	publishedAt: string;
+	avatarMap: string;
+	viewCount: string;
+}>();
 </script>
 
 <style scoped>

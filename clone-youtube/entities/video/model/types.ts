@@ -1,60 +1,71 @@
 interface IThumbnail {
-    url: string;
-    width: number;
-    height: number;
+	url: string;
+	width: number;
+	height: number;
 }
 
-export interface IVideoSnippet {
-    publishedAt: string;
-    channelId: string;
-    title: string;
-    description: string;
-    thumbnails: {
-        default: IThumbnail;
-        medium: IThumbnail;
-        high: IThumbnail;
-        standard?: IThumbnail;
-        maxres?: IThumbnail;
-    };
-    channelTitle: string;
-    tags?: string[];
-    categoryId: string;
-    liveBroadcastContent: string;
-    localized: {
-        title: string;
-        description: string;
-    };
+interface IVideoSnippet {
+	publishedAt: string;
+	channelId: string;
+	title: string;
+	description: string;
+	thumbnails: {
+		default: IThumbnail;
+		medium: IThumbnail;
+		high: IThumbnail;
+		standard?: IThumbnail;
+	};
+	channelTitle: string;
+	tags?: string[];
+	categoryId: string;
+	liveBroadcastContent: string;
+	localized: {
+		title: string;
+		description: string;
+	};
+	channelAvatar: string | null;
 }
 
-export interface IVideoContentDetails {
-    duration: string;
-    dimension: string;
-    definition: string;
-    caption: string;
-    projection:string,
-    licensedContent: boolean;
+interface IVideoContentDetails {
+	duration: string;
+	dimension: string;
+	definition: string;
+	caption: string;
+	licensedContent: boolean;
+	regionRestriction: {
+		blocked: string[];
+	};
+	contentRating: any;
+	projection: string;
 }
 
-export interface IVideoStatistics {
-    viewCount: string;
-    likeCount: string;
-    favoriteCount: string;
-    commentCount: string;
+interface IVideoStatistics {
+	viewCount: string;
+	likeCount: string;
+	favoriteCount: string;
+	commentCount: string;
 }
-export interface IVideo {
-    id: string;
-    snippet: IVideoSnippet;
-    contentDetails: IVideoContentDetails;
-    statistics: IVideoStatistics;
+interface IVideo {
+	id: string;
+	snippet: IVideoSnippet;
+	contentDetails: IVideoContentDetails;
+	statistics: IVideoStatistics;
 }
 
-export interface IYouTubeResponse {
-    etag: string;
-    items: IVideo[];
-    nextPageToken?: string;
-    kind: string;
-    pageInfo: {
-        totalResults: number;
-        resultsPerPage: number;
-    };
+interface IYouTubeResponse {
+	etag: string;
+	items: IVideo[];
+	nextPageToken?: string;
+	kind: string;
+	pageInfo: {
+		totalResults: number;
+		resultsPerPage: number;
+	};
 }
+export type {
+	IVideoSnippet,
+	IVideoContentDetails,
+	IVideoStatistics,
+	IVideo,
+	IYouTubeResponse,
+};

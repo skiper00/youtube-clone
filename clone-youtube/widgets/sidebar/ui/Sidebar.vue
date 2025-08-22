@@ -22,8 +22,8 @@
 import { Icon } from '@iconify/vue';
 
 const list: Array<{ id: number; name: string; path: string; to: string }> = [
-	{ id: 1, name: 'Главная', path: 'codicon:home', to: '/' },
-	{ id: 2, name: 'История', path: 'proicons:history', to: '/history' },
+	{ id: 1, name: 'Главная', path: 'mdi:home', to: '/' },
+	{ id: 2, name: 'История', path: 'mdi:history', to: '/history' },
 	{ id: 3, name: 'Плейлисты', path: 'solar:playlist-bold', to: '/playlists' },
 	{
 		id: 4,
