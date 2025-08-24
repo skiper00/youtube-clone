@@ -1,10 +1,10 @@
 <template>
-	<header class="py-1 px-[17px]">
+	<header class="px-3 py-1">
 		<div class="flex justify-between items-center">
 			<div class="flex items-center gap-2">
 				<div
 					@click="toggleMenu"
-					class="rounded-full cursor-pointer inline-block hover:bg-[#272727] p-2"
+					class="rounded-full cursor-pointer inline-block hover:bg-[#272727] pa-2"
 				>
 					<Icon
 						icon="material-symbols-light:menu"

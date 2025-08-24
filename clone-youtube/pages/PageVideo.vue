@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="pa-4">
 		<VideoPlayer :videoId="videoId" />
 	</div>
 </template>
