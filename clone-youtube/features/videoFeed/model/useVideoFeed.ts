@@ -1,11 +1,13 @@
 import { ref } from 'vue';
 import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
 import duration from 'dayjs/plugin/duration';
+import relativeTime from 'dayjs/plugin/relativeTime';
 import 'dayjs/locale/ru';
 
 import type { IYouTubeResponse, IVideo } from '@/entities/video/model/types';
 import { videoRepository } from '@features/videoFeed/api/videoRepository';
+import { compactViews } from '../utils/compactViews';
+import { formattedDuration } from '../utils/formattedDuration';
 
 // Подключаем плагины
 dayjs.extend(relativeTime);
@@ -42,8 +44,7 @@ export default function useVideoFeed() {
 
 		const newVideos = data.items.map((item) => {
 			const dur = dayjs.duration(item.contentDetails.duration);
-			const formattedDuration =
-				dur.asSeconds() >= 3600 ? dur.format('H:mm:ss') : dur.format('m:ss');
+
 
 			return {
 				...item,
@@ -54,8 +55,11 @@ export default function useVideoFeed() {
 				},
 				contentDetails: {
 					...item.contentDetails,
-					duration: formattedDuration,
+					duration: formattedDuration(dur),
 				},
+				statistics:{
+					viewCount: compactViews(item.statistics.viewCount)
+				}
 			} as IVideo;
 		});
 		if (!videos.value) {
