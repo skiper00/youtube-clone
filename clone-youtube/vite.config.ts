@@ -3,12 +3,13 @@ import vue from '@vitejs/plugin-vue';
 import path from 'path';
 import tailwindcss from '@tailwindcss/vite';
 import { loadEnv } from 'vite';
+import vuetify from 'vite-plugin-vuetify';
 
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
 	const env = loadEnv(mode, process.cwd(), '');
 	return {
-		plugins: [vue(), tailwindcss()],
+		plugins: [vue(), tailwindcss(), vuetify({ autoImport: true })],
 		define: {
 			'process.env': env,
 		},

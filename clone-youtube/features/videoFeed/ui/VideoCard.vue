@@ -7,7 +7,7 @@
 				alt=""
 			/>
 			<div
-				class="absolute right-1 bottom-1.5 px-1.5 rounded-[5px] bg-[#0f0f0f]/60"
+				class="absolute right-1 bottom-1.5 px-1 rounded-[5px] bg-[#0f0f0f]/60"
 			>
 				<span class="text-white text-sm">{{ duration }}</span>
 			</div>

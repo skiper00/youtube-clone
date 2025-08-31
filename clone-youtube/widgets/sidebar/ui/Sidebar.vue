@@ -1,10 +1,10 @@
 <template>
 	<div class="text-white px-[3px] text-[10px]">
-		<div class="mt-[4px] w-full">
+		<div class="mt-1 w-full">
 			<div
 				v-for="item in list"
 				:key="item.id"
-				class="flex cursor-pointer flex-col py-[12px] px-[2px] rounded-[10px] leading-4 items-center hover:bg-[#272727]"
+				class="flex cursor-pointer flex-col py-3 p-1 rounded-[10px] leading-4 items-center hover:bg-[#272727]"
 			>
 				<router-link
 					:to="item.to"
