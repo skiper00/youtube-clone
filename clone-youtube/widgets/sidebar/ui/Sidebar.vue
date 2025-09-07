@@ -1,5 +1,5 @@
 <template>
-	<div class="text-white px-[3px] text-[10px]">
+	<div class="sidebar text-white px-[3px] text-[10px]">
 		<div class="mt-1 w-full">
 			<div
 				v-for="item in list"
@@ -33,3 +33,11 @@ const list: Array<{ id: number; name: string; path: string; to: string }> = [
 	},
 ];
 </script>
+
+<style scoped>
+@media (max-width: 1024px) {
+	.sidebar {
+		display: none;
+	}
+}
+</style>

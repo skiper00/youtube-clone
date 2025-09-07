@@ -27,9 +27,9 @@
 				</header>
 
 				<nav class="flex flex-col gap-4">
-					<ul class="space-y-2">
+					<ul class="">
 						<li
-							class="px-2 py-2 cursor-pointer hover:bg-[#272727] rounded-[13px] font-semibold"
+							class="px-4 py-2 cursor-pointer hover:bg-[#272727] rounded-[13px] font-semibold"
 						>
 							<router-link
 								to="/"
@@ -41,7 +41,7 @@
 							</router-link>
 						</li>
 						<li
-							class="px-2 py-2 flex items-center gap-4 mt-2 rounded-[13px] cursor-pointer hover:bg-[#272727]"
+							class="px-4 py-2 flex items-center gap-4 mt-2 rounded-[13px] cursor-pointer hover:bg-[#272727]"
 							aria-label="Go to Subscriptions"
 						>
 							<Icon
@@ -57,16 +57,12 @@
 					<hr class="border-t border-[#272727] my-3.75" />
 
 					<section class="menu-section">
-						<h3 class="font-bold mb-2">Вы</h3>
-						<ul
-							v-for="item in list"
-							:key="item.id"
-							class="list-none p-0 m-0 space-y-2"
-						>
+						<h3 class="font-bold mb-2 px-2">Вы</h3>
+						<ul v-for="item in list" :key="item.id" class="">
 							<router-link :to="item.to">
 								<li
 									@click="emit('closeMenu')"
-									class="flex items-center mt-2 px-2 py-2 hover:bg-[#272727] rounded-[13px] gap-5 cursor-pointer"
+									class="flex items-center mt-2 px-4 py-2 hover:bg-[#272727] rounded-[13px] gap-5 cursor-pointer"
 									aria-label="Go to History"
 								>
 									<Icon class="w-6 h-6" :icon="item.path" />
@@ -79,9 +75,9 @@
 					<hr class="border-t border-[#272727] my-3.75" />
 
 					<section class="menu-section">
-						<h3 class="font-bold mb-2">Подписки</h3>
+						<h3 class="font-bold mb-2 px-2">Подписки</h3>
 						<div
-							class="flex rounded-[13px] px-2 py-2 items-center gap-5 hover:bg-[#272727] cursor-pointer"
+							class="flex rounded-[13px] px-4 py-2 items-center gap-5 hover:bg-[#272727] cursor-pointer"
 							aria-label="Go to ElvenKnigt Channel"
 						>
 							<img

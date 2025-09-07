@@ -45,7 +45,6 @@ export default function useVideoFeed() {
 		const newVideos = data.items.map((item) => {
 			const dur = dayjs.duration(item.contentDetails.duration);
 
-
 			return {
 				...item,
 				snippet: {
@@ -57,9 +56,9 @@ export default function useVideoFeed() {
 					...item.contentDetails,
 					duration: formattedDuration(dur),
 				},
-				statistics:{
-					viewCount: compactViews(item.statistics.viewCount)
-				}
+				statistics: {
+					viewCount: compactViews(item.statistics.viewCount),
+				},
 			} as IVideo;
 		});
 		if (!videos.value) {

@@ -35,13 +35,14 @@ import { Icon } from '@iconify/vue';
 
 const props = defineProps<{
 	placeholder?: string;
+	searchQuery:string
 }>();
 
-const searchQuery = ref('');
+const searchQuery = ref(props.searchQuery || '');
 
-const clearSearch = () => {
+function clearSearch() {
 	searchQuery.value = '';
-};
+}
 </script>
 
 <style scoped>
