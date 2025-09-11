@@ -1,20 +1,22 @@
-import { createMemoryHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router';
 
-import HomeView from '@pages/HomeView.vue';
-import History from '@pages/History.vue';
-import Liked from '@pages/Liked.vue';
-// import PlaylistPage from '@pages/PlaylistPage.vue';
-import PageVideo from '@pages/PageVideo.vue';
+import HomePage from '@pages/home/ui/HomePage.vue';
+import HistoryPage from '@pages/history/ui/HistoryPage.vue';
+import LikedPage from '@pages/liked/ui/LikedPage.vue';
+import PlaylistPage from '@pages/playlist/ui/PlaylistPage.vue';
+import VideoPage from '@pages/video/ui/VideoPage.vue';
+import SearchPage from '../../../pages/search/ui/SearchPage.vue';
 
 const routes = [
-	{ path: '/', component: HomeView },
-	{ path: '/history', component: History },
-	// { path: '/playlists', component: PlaylistPage },
-	{ path: '/liked', component: Liked },
-	{ path: '/watch/:id', component: PageVideo, props: true },
+	{ path: '/', component: HomePage },
+	{ path: '/history', component: HistoryPage },
+	{ path: '/playlists', component: PlaylistPage },
+	{ path: '/liked', component: LikedPage },
+	{ path: '/watch/:id', component: VideoPage, props: true },
+	{ path: '/search', component: SearchPage },
 ];
 
 export const router = createRouter({
-	history: createMemoryHistory(),
+	history: createWebHistory(),
 	routes,
 });

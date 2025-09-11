@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full">
+	<div>
 		<div v-if="videos?.items" class="wrapper-videos">
 			<video-card
 				v-for="video in videos?.items"
@@ -25,6 +25,7 @@
 			</div>
 		</div>
 		<div ref="loadMore" v-if="hasMore" class="h-16"></div>
+		F
 	</div>
 </template>
 
@@ -32,7 +33,7 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import { useRouter } from 'vue-router';
 import useVideoFeed from '@features/videoFeed/model/useVideoFeed.ts';
-import VideoCard from '@features/videoFeed/ui/VideoCard.vue';
+import VideoCard from '@entities/video/ui/VideoCard.vue';
 
 const router = useRouter();
 

@@ -12,14 +12,15 @@
 				/>
 			</span>
 			<input
-				v-model="searchQuery"
+				v-model="input"
+				@keyup.enter="onSearch"
 				type="text"
 				:placeholder="props.placeholder"
 				class="w-full bg-transparent text-white placeholder-[#707070] text-sm py-2 px-3 focus:outline-none"
 			/>
 
 			<button
-				v-if="searchQuery"
+				v-if="input"
 				@click="clearSearch"
 				class="pr-3 text-gray-400 hover:text-gray-200 cursor-pointer"
 			>
@@ -32,21 +33,25 @@
 <script lang="ts" setup>
 import { defineProps, ref } from 'vue';
 import { Icon } from '@iconify/vue';
+import { storeToRefs } from 'pinia';
+import { useSearchStore } from '@entities/search/store/searchStore';
+
+const searchStore = useSearchStore();
+const { query } = storeToRefs(searchStore);
+const input = ref(query.value);
 
 const props = defineProps<{
 	placeholder?: string;
-	searchQuery:string
 }>();
 
-const searchQuery = ref(props.searchQuery || '');
+function onSearch() {
+	searchStore.setQuery(input.value);
+}
 
 function clearSearch() {
-	searchQuery.value = '';
+	input.value = '';
+	searchStore.setQuery('');
 }
 </script>
 
-<style scoped>
-input:focus + button {
-	display: block;
-}
-</style>
+<style scoped></style>
