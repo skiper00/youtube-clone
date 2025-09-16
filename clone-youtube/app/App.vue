@@ -1,6 +1,6 @@
 <template>
 	<div class="flex flex-col bg-[#0f0f0f]">
-		<Header class="border-2" />
+		<Header class="" />
 		<div class="flex">
 			<Sidebar class="" />
 			<router-view class="" />

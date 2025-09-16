@@ -10,9 +10,14 @@ export default function useSearchVideo() {
 	const pageToken = ref<string | null>(null);
 	const hasMore = ref(true);
 
+	const resetVideos = () => {
+		videos.value = null;
+		pageToken.value = null;
+		hasMore.value = true;
+	};
+
 	const searchStore = useSearchStore();
 	const { buildAvatarMap, mapVideos } = useMapVideos();
-
 	const fetchSearchVideos = async () => {
 		if (!hasMore.value) return;
 
@@ -35,5 +40,5 @@ export default function useSearchVideo() {
 		}
 	};
 
-	return { videos, fetchSearchVideos, hasMore };
+	return { videos, fetchSearchVideos, resetVideos, hasMore };
 }

@@ -25,7 +25,6 @@
 			</div>
 		</div>
 		<div ref="loadMore" v-if="hasMore" class="h-16"></div>
-		F
 	</div>
 </template>
 
@@ -72,7 +71,6 @@ onUnmounted(() => {
 }
 
 .wrapper-videos {
-	padding: 12px 40px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;

@@ -27,6 +27,7 @@ export function useMapVideos() {
 					...item.snippet,
 					publishedAt: dayjs(item.snippet.publishedAt).fromNow(),
 					channelAvatar: avatarMap[item.snippet.channelId] || null,
+					description: item.snippet.description.replace(/\n/g, ' '),
 				},
 				contentDetails: {
 					...item.contentDetails,

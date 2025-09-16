@@ -33,19 +33,23 @@
 <script lang="ts" setup>
 import { defineProps, ref } from 'vue';
 import { Icon } from '@iconify/vue';
+import { useRouter } from 'vue-router';
 import { storeToRefs } from 'pinia';
 import { useSearchStore } from '@entities/search/store/searchStore';
 
 const searchStore = useSearchStore();
 const { query } = storeToRefs(searchStore);
 const input = ref(query.value);
+const router = useRouter();
 
 const props = defineProps<{
 	placeholder?: string;
 }>();
 
-function onSearch() {
+async function onSearch() {
+	if (!input.value.trim()) return;
 	searchStore.setQuery(input.value);
+	await router.push({ path: '/search', query: { q: input.value } });
 }
 
 function clearSearch() {

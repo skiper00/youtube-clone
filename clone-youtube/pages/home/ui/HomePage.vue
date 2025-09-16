@@ -1,5 +1,5 @@
 <template>
-	<div class="w-full">
+	<div class="w-full py-2 px-10">
 		<VideoFeed />
 	</div>
 </template>

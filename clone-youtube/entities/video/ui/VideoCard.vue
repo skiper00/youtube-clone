@@ -50,7 +50,7 @@ defineProps<{
 	nameChannel: string;
 	duration: string;
 	publishedAt: string;
-	avatarMap: string;
+	avatarMap?: string;
 	viewCount: string;
 }>();
 </script>
