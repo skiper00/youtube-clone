@@ -1,6 +1,6 @@
 <template>
 	<header class="px-3 py-1">
-		<div class="flex justify-between items-center">
+		<div class="flex items-center">
 			<div class="flex items-center gap-2">
 				<div
 					@click="toggleMenu"
@@ -14,14 +14,19 @@
 					/>
 				</div>
 				<dropdown-menu @closeMenu="closeMenu" :isOpen="isOpen" />
-
 				<router-link to="/">
 					<img class="w-[91px]" src="/youtube-logo.svg" alt="Logo" />
 				</router-link>
 			</div>
-			<div class="max-w-[400px] ml-10 w-full">
-				<Input :placeholder="'Введите запрос'" />
+
+			<div class="w-[150px] flex-shrink-0"></div>
+
+			<div class="flex-1 flex mr-10 justify-center">
+				<div class="w-full">
+					<Input class="w-full" :placeholder="'Введите запрос'" />
+				</div>
 			</div>
+
 			<div class="flex items-center gap-3">
 				<button
 					class="py-1.5 px-2.5 flex items-center gap-1 rounded-full bg-[#272727] hover:bg-[#3f3f3f]"
