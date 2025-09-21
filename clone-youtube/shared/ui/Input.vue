@@ -1,7 +1,7 @@
 <template>
-	<div class="relative">
+	<div class="flex justify-center flex-1">
 		<div
-			class="flex items-center border border-[#303030] rounded-[20px] overflow-hidden transition-all duration-200 focus-within:border-none focus-within:ring-1 focus-within:ring-[#65a3e8] focus-within:ring-offset-1 focus-within:ring-offset-[#121212]"
+			class="flex items-center w-full max-w-[600px] border border-[#303030] rounded-[20px] overflow-hidden transition-all duration-200 focus-within:border-none focus-within:ring-1 focus-within:ring-[#65a3e8] focus-within:ring-offset-1 focus-within:ring-offset-[#121212]"
 		>
 			<span class="pl-3">
 				<Icon
@@ -29,6 +29,7 @@
 		</div>
 	</div>
 </template>
+
 
 <script lang="ts" setup>
 import { defineProps, ref } from 'vue';

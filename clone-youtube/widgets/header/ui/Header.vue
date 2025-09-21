@@ -19,15 +19,15 @@
 				</router-link>
 			</div>
 
-			<div class="w-[260px] flex-shrink-0"></div>
+			<div class="w-[150px] flex-shrink-0"></div>
 
-			<div class="flex-1 flex justify-center">
-				<div class="max-w-2xl w-full">
+			<div class="flex-1 flex mr-10 justify-center">
+				<div class="w-full">
 					<Input class="w-full" :placeholder="'Введите запрос'" />
 				</div>
 			</div>
 
-			<div class="flex items-center gap-3 flex-shrink-0">
+			<div class="flex items-center gap-3">
 				<button
 					class="py-1.5 px-2.5 flex items-center gap-1 rounded-full bg-[#272727] hover:bg-[#3f3f3f]"
 				>

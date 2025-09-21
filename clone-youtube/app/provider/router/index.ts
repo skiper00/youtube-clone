@@ -5,7 +5,7 @@ import HistoryPage from '@pages/history/ui/HistoryPage.vue';
 import LikedPage from '@pages/liked/ui/LikedPage.vue';
 import PlaylistPage from '@pages/playlist/ui/PlaylistPage.vue';
 import VideoPage from '@pages/video/ui/VideoPage.vue';
-import SearchPage from '../../../pages/search/ui/SearchPage.vue';
+import SearchPage from '@pages/search/ui/SearchPage.vue';
 
 const routes = [
 	{ path: '/', component: HomePage },
@@ -20,3 +20,4 @@ export const router = createRouter({
 	history: createWebHistory(),
 	routes,
 });
+

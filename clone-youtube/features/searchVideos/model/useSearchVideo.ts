@@ -9,6 +9,7 @@ export default function useSearchVideo() {
 	const videos = ref<IYouTubeResponse | null>(null);
 	const pageToken = ref<string | null>(null);
 	const hasMore = ref(true);
+	const searchStore = useSearchStore();
 
 	const resetVideos = () => {
 		videos.value = null;
@@ -16,7 +17,6 @@ export default function useSearchVideo() {
 		hasMore.value = true;
 	};
 
-	const searchStore = useSearchStore();
 	const { buildAvatarMap, mapVideos } = useMapVideos();
 	const fetchSearchVideos = async () => {
 		if (!hasMore.value) return;
