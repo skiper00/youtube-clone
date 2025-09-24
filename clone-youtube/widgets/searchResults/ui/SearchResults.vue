@@ -1,11 +1,5 @@
 <template>
 	<div>
-		<!-- <div v-if="isLoading" class="text-center text-xl font-semibold text-gray-600 mt-10">
-			Loading...
-		</div>
-		<div v-else-if="!videos.length" class="text-center text-xl font-semibold text-gray-600 mt-10">
-		No videos found.
-	</div> -->
 	<div v-if="videos" class="">
 		<SearchCard
 			v-for="video in videos || []"
@@ -26,9 +20,7 @@
 
 <script lang="ts" setup>
 import SearchCard from '@entities/search/ui/SearchCard.vue';
-import { useSearchVideosLoader } from '@features/searchVideos/store/loader';
 
-const isLoading = useSearchVideosLoader();
 
 defineProps<{
 	videos: any[];
