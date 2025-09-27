@@ -2,10 +2,15 @@
 	<div class="video-card cursor-pointer w-full">
 		<div class="relative w-full">
 			<img
+			    v-show="isImageLoaded && preview"
 				class="w-full rounded-[12px] transition-all hover:rounded-none"
 				:src="preview"
 				alt=""
+				@load="onImageLoad"
 			/>
+			<div v-show="preview && !isImageLoaded" class="w-full h-[202px] rounded-[12px] flex items-center justify-center">
+                <LoaderVideos />
+			</div>
 			<div
 				class="absolute right-1 bottom-1.5 px-1 rounded-[5px] bg-[#0f0f0f]/60"
 			>
@@ -42,7 +47,9 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps } from 'vue';
+import { defineProps,ref } from 'vue';
+import LoaderVideos from '@shared/ui/LoaderVideos.vue';
+
 
 defineProps<{
 	preview: string;
@@ -53,6 +60,13 @@ defineProps<{
 	avatarMap?: string;
 	viewCount: string;
 }>();
+const isImageLoaded = ref(false);
+
+const onImageLoad = () => {
+    isImageLoaded.value = true;
+};
+
+
 </script>
 
 <style scoped>

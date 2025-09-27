@@ -1,17 +1,17 @@
 <template>
 	<div class="h-screen">
 		<div v-if="isLoading" class="fixed inset-0 flex items-center justify-center">
-			<Loader />
+			<LoaderSearch />
 		</div>
 		<div v-else class="py-2 px-10 h-screen overflow-y-auto">
 			<SearchResults :videos="videos?.items" />
 		</div>
-	</div>
+	</div> 
 </template>
 
 <script lang="ts" setup>
 import { onMounted, watch } from 'vue';
-import Loader from '@shared/ui/Loader.vue';
+import LoaderSearch from '@shared/ui/LoaderSearch.vue';
 import { useSearchStore } from '@entities/search/store/searchStore';
 import useSearchVideo from '@features/searchVideos/model/useSearchVideo';
 import SearchResults from '@widgets/searchResults/ui/SearchResults.vue';

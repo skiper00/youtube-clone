@@ -30,18 +30,15 @@
 
 <script lang="ts" setup>
 import { onMounted, onUnmounted, ref } from 'vue';
-import { useRouter } from 'vue-router';
 import useVideoFeed from '@features/videoFeed/model/useVideoFeed.ts';
 import VideoCard from '@entities/video/ui/VideoCard.vue';
+import { useNavigation } from '../../../composable/useNavigation';
 
-const router = useRouter();
+const { getToVideo } = useNavigation();
 
 const { fetchVideos, videos, hasMore } = useVideoFeed();
 const loadMore = ref(null);
 
-const getToVideo = (videoId: string) => {
-	router.push(`/watch/${videoId}`);
-};
 
 const observer = new IntersectionObserver(
 	async (entries) => {
