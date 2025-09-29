@@ -1,3 +1,5 @@
 <template>
-	<div class="text-white">Понравившиеся</div>
+	<div class="h-screen">
+		<div class="text-white">Понравившиеся</div>
+	</div>
 </template>

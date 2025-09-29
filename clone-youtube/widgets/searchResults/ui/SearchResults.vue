@@ -4,6 +4,7 @@
 		<SearchCard
 			v-for="video in videos || []"
 			:key="video.id"
+			@click="getToVideo(video.id)"
 			:preview="video.snippet.thumbnails.high.url"
 			:name-video="video.snippet.title"
 			:name-channel="video.snippet.channelTitle"
@@ -20,7 +21,9 @@
 
 <script lang="ts" setup>
 import SearchCard from '@entities/search/ui/SearchCard.vue';
+import {useNavigation} from '../../../composable/useNavigation';
 
+const { getToVideo } = useNavigation();
 
 defineProps<{
 	videos: any[];
