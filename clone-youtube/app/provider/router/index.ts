@@ -6,6 +6,7 @@ import LikedPage from '@pages/liked/ui/LikedPage.vue';
 import PlaylistPage from '@pages/playlist/ui/PlaylistPage.vue';
 import VideoPage from '@pages/video/ui/VideoPage.vue';
 import SearchPage from '@pages/search/ui/SearchPage.vue';
+import ChannelPage from '@pages/Channel/ui/ChannelPage.vue';
 
 const routes = [
 	{ path: '/', component: HomePage },
@@ -13,6 +14,7 @@ const routes = [
 	{ path: '/playlists', component: PlaylistPage },
 	{ path: '/liked', component: LikedPage },
 	{ path: '/watch/:id', component: VideoPage, props: true },
+	{ path: '/channel/:id', component: ChannelPage, props: true },
 	{ path: '/search', component: SearchPage },
 ];
 
@@ -20,4 +22,3 @@ export const router = createRouter({
 	history: createWebHistory(),
 	routes,
 });
-

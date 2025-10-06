@@ -19,7 +19,6 @@ import Sidebar from '@widgets/sidebar/ui/Sidebar.vue';
 // const route = useRoute();
 // const isRoutePath = computed(() => route.path);
 
-
 // 	watch(isRoutePath, async (newPath) => {
 // 		if (newPath !== '/search') {
 // 			searchStore.resetQuery();

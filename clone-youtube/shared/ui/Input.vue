@@ -30,7 +30,6 @@
 	</div>
 </template>
 
-
 <script lang="ts" setup>
 import { defineProps, ref } from 'vue';
 import { Icon } from '@iconify/vue';

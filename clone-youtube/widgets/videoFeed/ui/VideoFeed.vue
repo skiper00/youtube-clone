@@ -5,6 +5,7 @@
 				v-for="video in videos?.items"
 				:key="video.id"
 				@click="getToVideo(video.id)"
+				:channel-id="video.snippet.channelId"
 				:preview="video.snippet.thumbnails.high.url"
 				:name-video="video.snippet.title"
 				:name-channel="video.snippet.channelTitle"
@@ -38,7 +39,6 @@ const { getToVideo } = useNavigation();
 
 const { fetchVideos, videos, hasMore } = useVideoFeed();
 const loadMore = ref(null);
-
 
 const observer = new IntersectionObserver(
 	async (entries) => {
