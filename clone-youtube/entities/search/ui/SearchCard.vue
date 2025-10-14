@@ -29,7 +29,10 @@
 						:src="avatarMap"
 						alt=""
 					/>
-					<p class="text-[#aaa] hover:text-[#f1f1f1] cursor-pointer text-xs">
+					<p
+						@click.stop="goToChannel(channelId)"
+						class="text-[#aaa] hover:text-[#f1f1f1] cursor-pointer text-xs"
+					>
 						{{ nameChannel }}
 					</p>
 				</div>
@@ -43,12 +46,16 @@
 
 <script lang="ts" setup>
 import { defineProps } from 'vue';
+import { useNavigation } from '../../../composable/useNavigation';
+
+const { goToChannel } = useNavigation();
 
 defineProps<{
 	preview: string;
 	nameVideo: string;
 	nameChannel: string;
 	publishedAt: string;
+	channelId: string;
 	duration?: string;
 	viewCount?: string;
 	avatarMap: string;

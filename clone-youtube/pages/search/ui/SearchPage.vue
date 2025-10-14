@@ -1,12 +1,15 @@
 <template>
 	<div class="h-screen">
-		<div v-if="isLoading" class="fixed inset-0 flex items-center justify-center">
+		<div
+			v-if="isLoading"
+			class="fixed inset-0 flex items-center justify-center"
+		>
 			<LoaderSearch />
 		</div>
 		<div v-else class="py-2 px-10 h-screen overflow-y-auto">
 			<SearchResults :videos="videos?.items" />
 		</div>
-	</div> 
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -43,6 +46,4 @@ watch(query, async (newQuery) => {
 		await fetchSearchVideos();
 	}
 });
-
-
 </script>

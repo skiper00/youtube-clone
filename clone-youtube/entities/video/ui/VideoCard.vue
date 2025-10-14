@@ -2,14 +2,17 @@
 	<div class="video-card cursor-pointer w-full">
 		<div class="relative w-full">
 			<img
-			    v-show="isImageLoaded && preview"
+				v-show="isImageLoaded && preview"
 				class="w-full rounded-[12px] transition-all hover:rounded-none"
 				:src="preview"
 				alt=""
 				@load="onImageLoad"
 			/>
-			<div v-show="preview && !isImageLoaded" class="w-full h-[202px] rounded-[12px] flex items-center justify-center">
-                <LoaderVideos />
+			<div
+				v-show="preview && !isImageLoaded"
+				class="w-full h-[202px] rounded-[12px] flex items-center justify-center"
+			>
+				<LoaderVideos />
 			</div>
 			<div
 				class="absolute right-1 bottom-1.5 px-1 rounded-[5px] bg-[#0f0f0f]/60"
@@ -32,6 +35,7 @@
 				</p>
 				<div>
 					<p
+						@click.stop="goToChannel(channelId)"
 						class="text-[#aaa] hover:text-[#f1f1f1] cursor-pointer text-xs sm:text-sm"
 					>
 						{{ nameChannel }}
@@ -47,26 +51,28 @@
 </template>
 
 <script lang="ts" setup>
-import { defineProps,ref } from 'vue';
+import { defineProps, ref } from 'vue';
 import LoaderVideos from '@shared/ui/LoaderVideos.vue';
+import { useNavigation } from '../../../composable/useNavigation';
 
+const { goToChannel } = useNavigation();
 
 defineProps<{
 	preview: string;
 	nameVideo: string;
 	nameChannel: string;
+	channelId: string;
 	duration: string;
 	publishedAt: string;
 	avatarMap?: string;
 	viewCount: string;
 }>();
+
 const isImageLoaded = ref(false);
 
 const onImageLoad = () => {
-    isImageLoaded.value = true;
+	isImageLoaded.value = true;
 };
-
-
 </script>
 
 <style scoped>

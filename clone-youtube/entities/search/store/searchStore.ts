@@ -9,7 +9,7 @@ export const useSearchStore = defineStore('search', () => {
 
 	const resetQuery = () => {
 		query.value = '';
-	}
+	};
 
 	return { query, setQuery, resetQuery };
 });

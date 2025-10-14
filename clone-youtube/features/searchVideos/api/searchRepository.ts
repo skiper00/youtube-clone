@@ -18,9 +18,9 @@ export const searchRepository: ISearchVieos = {
 			const ids = searchData.items
 				.map((item: any) => item.id.videoId)
 				.join(',');
-			if (!ids){
+			if (!ids) {
 				return { ...searchData, items: [] };
-			} 
+			}
 			const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${ids}&key=${apiKey}`;
 			const videoRes = await fetch(videoUrl);
 			if (!videoRes.ok)

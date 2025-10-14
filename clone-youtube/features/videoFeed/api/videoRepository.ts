@@ -21,7 +21,7 @@ export const videoRepository: IVideoRepository = {
 	// Метод для получения информации о каналах по списку их ID
 	async fetchChannels(ids: string[]): Promise<any> {
 		const cnannelsRes = await fetch(
-			`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${ids}&key=${apiKey}`
+		`https://www.googleapis.com/youtube/v3/channels?part=snippet&id=${ids}&key=${apiKey}`,
 		);
 		//валидация запроса
 		if (!cnannelsRes.ok) {
