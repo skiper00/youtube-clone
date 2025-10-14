@@ -9,7 +9,7 @@ export const searchRepository: ISearchVieos = {
 		const { setLoading } = useSearchVideosLoader();
 		setLoading(true);
 		try {
-			const url = `/api/youtube/v3/search?part=snippet&type=video&maxResults=25&q=${encodeURIComponent(query)}&key=${apiKey}`;
+			const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&maxResults=25&q=${encodeURIComponent(query)}&key=${apiKey}`;
 			const res = await fetch(url);
 			if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
 
@@ -21,7 +21,7 @@ export const searchRepository: ISearchVieos = {
 			if (!ids) {
 				return { ...searchData, items: [] };
 			}
-			const videoUrl = `/api/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${ids}&key=${apiKey}`;
+			const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${ids}&key=${apiKey}`;
 			const videoRes = await fetch(videoUrl);
 			if (!videoRes.ok)
 				throw new Error(`HTTP error! status: ${videoRes.status}`);

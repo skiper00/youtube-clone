@@ -1,7 +1,7 @@
 <template>
-	<div>
+	<div class="w-full h-full">
 		<iframe
-			class="w-[800px] h-[500px] rounded-lg"
+			class="rounded-lg w-full h-full"
 			:src="`https://www.youtube.com/embed/${videoId}`"
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
