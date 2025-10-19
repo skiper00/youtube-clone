@@ -28,7 +28,7 @@ const list: Array<{ id: number; name: string; path: string; to: string }> = [
 	{
 		id: 4,
 		name: 'Понравившиеся',
-		path: 'streamline-plump:like-1',
+		path: 'iconamoon:like-thin',
 		to: '/liked',
 	},
 ];

@@ -26,4 +26,4 @@ import Sidebar from '@widgets/sidebar/ui/Sidebar.vue';
 // 	});
 </script>
 
-<style scoped></style>
+
